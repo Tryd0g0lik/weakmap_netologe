@@ -4,7 +4,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlusin = require("eslint-wepback-plugin");
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 const stylesHandler = isProduction
 	? MiniCssExtractPlugin.loader
@@ -21,13 +21,13 @@ const config = {
 		host: "localhost",
 	},
 	plugins: [
-		new ESLintPlugin({
+		new ESLintPlusin({
 			files: path.resolve(__dirname, "./src/js")
 		}),
 		new HtmlWebpackPlugin({
 			template: "index.html",
 		}),
-
+		// new MiniCssExtractPlugin(),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],

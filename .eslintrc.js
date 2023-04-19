@@ -11,10 +11,13 @@ module.exports = {
 		sourceType: 'module',
 	},
 	rules: {
+		"no-tabs": 0,
+		"linebreak-style": 0,
+		"indent": 0,
+		"no-undef": 0,
+		"no-restricted-syntax": 0,
+		"quotes": ["error", "double", { "avoidEscape": true },],
+		"no-unused-vars": ["error", { "vars": "all" }],
+
 	},
-	extends: [
-		"airbnb-base",
-		"eslint:recommended",
-		{ plugin: "import/recommended" }
-	]
 };

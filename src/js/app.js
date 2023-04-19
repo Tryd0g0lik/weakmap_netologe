@@ -1,48 +1,14 @@
-
-
-// class Character {
-// 	#hero = '';
-// 	constructor() {
-// 		this.heroes = { "name": '' };
-// 	}
-// }
-
-class Team {
-	constructor() {
-		this.members = new Set();
-		this.heroes = [];
+export default class ErrorRepository {
+	constructor(data) {
+		this.map = new Map(data);
 	}
 
-	add(hero) {
-
-		function newThrow() {
-			console.error(`Данный "${hero}" уже имеется всписке. `);
-			return
-		}
-
-		this.members.has(hero) ? newThrow() : this.members.add(hero);
-
-
-		this.members.forEach((value, index) => {
-
-			this.heroes.push({ 'name': value })
-		})
-
-		console.log(this.heroes.length)
-
-	}
-
-	addAll(...heros) {
-
-
-	}
-
-	toArray() {
-
+	translate(code) {
+		return this.map.get(code);
 	}
 }
 
-const team = new Team();
-team.add('Magus')
-team.add('Лучник')
-team.add('Magus')
+// const myErr = new ErrorRepository([[1001, "1001 текстовое описание"],
+// [1002, "1002 текстовое описание"],
+// [1003, "1003 текстовое описание"]]);
+// console.log(myErr.translate(1002));
