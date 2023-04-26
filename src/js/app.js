@@ -4,7 +4,11 @@ export default class ErrorRepository {
 	}
 
 	translate(code) {
-		return this.map.get(code);
+		if (this.map.has(code)) {
+			return this.map.get(code);
+		}
+
+		return "Your command was not found"
 	}
 }
 
